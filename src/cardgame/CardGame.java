@@ -18,7 +18,10 @@ public class CardGame
     // constructors
     public CardGame( Player p1, Player p2, Player p3, Player p4)
     {
-        // ToDo
+        players.add(p1);
+        players.add(p2);
+        players.add(p3);
+        players.add(p4);
     }
     
     // methods
