@@ -18,16 +18,22 @@ public class CardGame
     // constructors
     public CardGame( Player p1, Player p2, Player p3, Player p4)
     {
+        players = new ArrayList<Player>();
+        fullPack = new Cards(true);
         players.add(p1);
         players.add(p2);
         players.add(p3);
         players.add(p4);
+        scoreCard = new ScoreCard(players.size());
+        fullPack.shuffle();
+        
+
     }
     
     // methods
     public boolean playTurn( Player p, Card c)
     {
-        cardsOnTable.add(p.playCard());
+
         return false;
     }
     
