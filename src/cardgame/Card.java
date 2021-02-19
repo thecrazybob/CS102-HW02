@@ -46,8 +46,16 @@ public class Card
     
     public boolean equals( Card c)
     {
-        // ToDo
+        if (this.getFaceValue() == c.getFaceValue() && this.getSuit() == c.getSuit() ) {
+            return true;
+        }
+
+        else {
+
         return false;
+        
+        }
+
     }
     
     public int compareTo( Card c)
