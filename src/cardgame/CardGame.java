@@ -51,20 +51,18 @@ public class CardGame
     
     public String getName( int playerNumber)
     {
-        // ToDo
-        return "Not yet implemented";
+
+        return players.get(playerNumber).getName();
     }
     
     public int getRoundNo()
     {
-        // ToDo
-        return -1;
+        return roundNo;
     }
     
     public int getTurnOfPlayerNo()
     {
-        // ToDo
-        return -1;
+        return getTurnOfPlayerNo();
     }
     
     public Player[] getWinners()
