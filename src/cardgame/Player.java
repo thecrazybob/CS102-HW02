@@ -28,8 +28,9 @@ public class Player
     
     public Card playCard()
     {
-        // ToDo
-        return null;
+        Card c = new Card(0);
+        c = hand.getTopCard();
+        return c;
     }
     
 } // end class Player
