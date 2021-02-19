@@ -1,4 +1,5 @@
 package cardgame;
+import java.util.Random;
 
 // Cards - Maintains a collection of zero or more playing cards.
 //         Provides facilities to create a full pack of 52 cards
@@ -53,21 +54,24 @@ public class Cards
     private void createFullPackOfCards()
     {
 
-        // Loop through each suit
-        for (int suit = 1; suit < 4; suit++) {
-
-            // Loop through each card
-            for (int card = 1; card < 13; card++) {
-                addTopCard(new Card(card));
-            }
-
+        // Loop through each card
+        for (int card = 0; card < 52; card++) {
+            addTopCard(new Card(card));
         }
 
     }
     
     public void shuffle()
     {
-        // Todo
+        Random rand = new Random();
+		
+		for (int i = 0; i < cards.length; i++) {
+			int randomIndexToSwap = rand.nextInt(cards.length);
+			Card temp = cards[randomIndexToSwap];
+			cards[randomIndexToSwap] = cards[i];
+			cards[i] = temp;
+		}
+
     }
     
     

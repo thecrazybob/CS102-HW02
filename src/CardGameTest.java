@@ -31,6 +31,7 @@ public class CardGameTest
         // test Cards class
         cards = new Cards( true);
         cards.addTopCard( c);
+        cards.shuffle();
         cards.testOnlyPrint();  // remove method after testing!
         
         // test ScoreCard class
