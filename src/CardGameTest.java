@@ -2,7 +2,7 @@ import java.util.Scanner;
 import cardgame.*;
 
 // CardGameTest
-// author: Abdullah Riaz (), Mohammed Sohail (22001513) and Mostafa Khaled ()
+// author: Abdullah Riaz (22001296), Mohammed Sohail (22001513) and Mostafa Khaled ()
 // date: 19th February 2021 19/02/2021
 public class CardGameTest
 {
