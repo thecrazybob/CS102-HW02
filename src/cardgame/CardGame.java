@@ -27,7 +27,7 @@ public class CardGame
     // methods
     public boolean playTurn( Player p, Card c)
     {
-        // Todo
+        cardsOnTable.add(p.playCard());
         return false;
     }
     
@@ -62,7 +62,7 @@ public class CardGame
     
     public int getTurnOfPlayerNo()
     {
-        return getTurnOfPlayerNo();
+        return turnOfPlayer;
     }
     
     public Player[] getWinners()
