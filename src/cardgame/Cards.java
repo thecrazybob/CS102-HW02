@@ -52,10 +52,17 @@ public class Cards
     
     private void createFullPackOfCards()
     {
-        // Todo
-        addTopCard( new Card(0) );
-        addTopCard( new Card(25) );
-        addTopCard( new Card(13) );
+
+        // Loop through each suit
+        for (int suit = 1; suit < 4; suit++) {
+
+            // Loop through each card
+            for (int card = 1; card < 13; card++) {
+                addTopCard(new Card(card));
+            }
+
+        }
+
     }
     
     public void shuffle()
