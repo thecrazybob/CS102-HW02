@@ -12,7 +12,7 @@ public class Player
     // constructors
     public Player( String name)
     {
-        // ToDo
+        this.name = name;
     }
     
     // methods
@@ -23,7 +23,7 @@ public class Player
     
     public void add( Card c)
     {
-        // ToDo
+        this.hand.addTopCard(c);
     }
     
     public Card playCard()
