@@ -26,6 +26,13 @@ public class CardGame
         players.add(p4);
         scoreCard = new ScoreCard(players.size());
         fullPack.shuffle();
+        cardsOnTable = new Cards[0];
+        for (int i = 0; i < players.size(); i++) {
+            for(int j = 0; j < 13; j++) {
+				players.get(i).add(fullPack.getTopCard());
+            }
+        }
+
         
 
     }

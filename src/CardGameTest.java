@@ -41,7 +41,8 @@ public class CardGameTest
         System.out.println( "\n" + scores );
         
         // test Player class
-        // ToDo
+        p = new Player("pg");
+        p.playCard();
         
         // test CardGame class too?
         // Todo

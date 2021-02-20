@@ -71,8 +71,7 @@ public class MyCardGame
                 play( p4, game);
             
             else if ( selection == MENU_SCORES )
-                // ToDo ~ System.out.println( game.showScoreCard() );
-                System.out.println( "ToDo..." );
+                System.out.println( game.showScoreCard() );
             
             else if ( selection != MENU_EXIT)
                 System.out.println( "Invalid selection! \n" );
@@ -86,7 +85,7 @@ public class MyCardGame
         System.out.println( "\nEnd of MyCardGame\n" );   
     }
 
-    // ToDo...
+    // ToDo...  Done but testing remains (AR)
     // get the card, c, that player p wants to play
     // pass c to the game, see if it accepted c from p
     // if game didn't accept the card, give c back to the player! 
@@ -96,7 +95,16 @@ public class MyCardGame
         Card       c;
         boolean    accepted;
         
-        accepted = false;  // ToDo...
+        accepted = false;
+        c=p.playCard();
+        if (game.playTurn(p, c)) {
+
+            accepted = true;
+        }
+
+        else 
+            accepted = false;
+            p.add(c);
 
         return accepted;
     }
