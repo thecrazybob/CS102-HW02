@@ -27,6 +27,8 @@ public class CardGame
         scoreCard = new ScoreCard(players.size());
         fullPack.shuffle();
         cardsOnTable = new Cards[0];
+        roundNo = 0;
+        turnOfPlayer = 0;
         for (int i = 0; i < players.size(); i++) {
             for(int j = 0; j < 13; j++) {
 				players.get(i).add(fullPack.getTopCard());
@@ -40,6 +42,13 @@ public class CardGame
     // methods
     public boolean playTurn( Player p, Card c)
     {
+        if (isGameOver() == true || isTurnOf(p) == true ) {
+            return false;
+        }
+        
+        cardsOnTable[turnOfPlayer].addTopCard(c);
+
+        
 
         return false;
     }
@@ -58,8 +67,7 @@ public class CardGame
     
     public int getScore( int playerNumber)
     {
-        // ToDo
-        return -1;
+        return scoreCard.getScore(playerNumber);
     }
     
     public String getName( int playerNumber)

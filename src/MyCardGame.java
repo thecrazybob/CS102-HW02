@@ -85,7 +85,7 @@ public class MyCardGame
         System.out.println( "\nEnd of MyCardGame\n" );   
     }
 
-    // ToDo...  Done but testing remains (AR)
+
     // get the card, c, that player p wants to play
     // pass c to the game, see if it accepted c from p
     // if game didn't accept the card, give c back to the player! 
@@ -102,10 +102,11 @@ public class MyCardGame
             accepted = true;
         }
 
-        else 
+        else {
             accepted = false;
+            System.out.println("Its not your turn");
             p.add(c);
-
+        }
         return accepted;
     }
     
