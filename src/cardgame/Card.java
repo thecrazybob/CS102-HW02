@@ -60,6 +60,14 @@ public class Card
     
     public int compareTo( Card c)
     {
-        return this.cardNo > c.cardNo ? 1 : 0;
-    }
+        if (this.cardNo == c.cardNo ) {
+            return 0;
+        }
+
+        else {
+            return this.cardNo > c.cardNo ? 1 : -1;
+        }
+
+}
+
 }
