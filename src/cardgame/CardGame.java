@@ -61,14 +61,24 @@ public class CardGame
 
         }
 
-
         return true;
     }
 
     private void updateScores() {
 
+        int maxCard = 0;
+        int temp = 0;
+        int playerNo = 0;
+        for (int i = 0; i < players.size(); i++) {
+            
+            temp = cardsOnTable[i].getTopCard().getCardNo();
+            if ( temp > maxCard ) {
+                maxCard = temp;
+                playerNo = i;
+            }
+        }
 
-
+        scoreCard.update(playerNo, 1);
     }
 
 

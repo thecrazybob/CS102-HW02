@@ -28,6 +28,10 @@ public class Card
     {
         cardNo = cardNumber;
     }
+
+    public int getCardNo() {
+        return this.cardNo;
+    }
     
     public int getFaceValue()
     {
@@ -69,5 +73,6 @@ public class Card
         }
 
 }
+
 
 }
