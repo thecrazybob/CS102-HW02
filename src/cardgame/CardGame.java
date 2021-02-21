@@ -26,7 +26,6 @@ public class CardGame
         players.add(p4);
         scoreCard = new ScoreCard(players.size());
         fullPack.shuffle();
-        cardsOnTable = new Cards[0];
         roundNo = 0;
         turnOfPlayer = 0;
         for (int i = 0; i < players.size(); i++) {
@@ -34,15 +33,17 @@ public class CardGame
 				players.get(i).add(fullPack.getTopCard());
             }
         }
-
-        
+        cardsOnTable = new Cards[players.size()];
+        for (int i = 0; i < players.size(); i++) {
+            cardsOnTable[i] = new Cards(false);
+        }
 
     }
     
     // methods
     public boolean playTurn( Player p, Card c)
     {
-        if (isGameOver() == true || isTurnOf(p) == true ) {
+        if (isGameOver() == true || isTurnOf(p) == false ) {
             return false;
         }
         
@@ -56,7 +57,7 @@ public class CardGame
             updateScores();
             if ( !isGameOver()) {
                 roundNo++;
-                turnOfPlayer = 1;
+                turnOfPlayer = 0;
             }
 
         }
