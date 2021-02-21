@@ -76,7 +76,7 @@ public class MyCardGame
             else if ( selection != MENU_EXIT)
                 System.out.println( "Invalid selection! \n" );
             
-        } while ( selection != MENU_EXIT);
+        } while ( selection != MENU_EXIT && !game.isGameOver());
 
         if ( game.isGameOver()) {
             if (game.getWinners().length > 1) {
@@ -116,6 +116,7 @@ public class MyCardGame
             System.out.println("Its not your turn");
             p.add(c);
         }
+
         return accepted;
     }
     

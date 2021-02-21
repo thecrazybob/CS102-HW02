@@ -97,7 +97,7 @@ public class CardGame
     
     public boolean isGameOver()
     {
-        if (roundNo >= 13) {
+        if ( roundNo > 13 ) {
             return true;
         }
         else {
