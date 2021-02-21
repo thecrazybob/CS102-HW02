@@ -78,9 +78,18 @@ public class MyCardGame
             
         } while ( selection != MENU_EXIT);
 
-        // display winners...
-        // ToDo ~ game.isGameOver(); ? game.getWinners(); 
-        System.out.println( "ToDo..." );
+        if ( game.isGameOver()) {
+            if (game.getWinners().length > 1) {
+               System.out.print( "The Winners Are : " + game.getWinners()[0].getName());
+               for ( int i = 1; i < game.getWinners().length; i++) {
+                  System.out.println( ", " + game.getWinners()[i].getName());
+               }
+            }
+            else {
+               System.out.print( "The Winner is : ");
+               System.out.println( game.getWinners()[0].getName());
+            }
+         }
         
         System.out.println( "\nEnd of MyCardGame\n" );   
     }
