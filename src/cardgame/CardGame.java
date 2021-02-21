@@ -47,22 +47,51 @@ public class CardGame
         }
         
         cardsOnTable[turnOfPlayer].addTopCard(c);
-
         
+        if (! (turnOfPlayer == players.size() - 1) ) {
+            turnOfPlayer++;
+        }
 
-        return false;
+        else {
+            updateScores();
+            if ( !isGameOver()) {
+                roundNo++;
+                turnOfPlayer = 1;
+            }
+
+        }
+
+
+        return true;
     }
+
+    private void updateScores() {
+
+
+
+    }
+
+
     
     public boolean isTurnOf( Player p)
     {
-        // ToDo
-        return false;
+        if ( getTurnOfPlayerNo() == players.indexOf(p) ) {
+            return true;
+        }
+
+        else {
+            return false;
+        }
     }
     
     public boolean isGameOver()
     {
-        // ToDo
-        return false;
+        if (roundNo >= 13) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
     
     public int getScore( int playerNumber)
@@ -88,8 +117,21 @@ public class CardGame
     
     public Player[] getWinners()
     {
-        // ToDo
-        return null;
+        Player[] winners;
+        int[] winnersIndexes;
+        int noOfWinners;
+
+        winnersIndexes = scoreCard.getWinners();
+        noOfWinners = winnersIndexes.length;
+        winners = new Player[noOfWinners];
+
+
+        for ( int i = 0; i < noOfWinners ; i++) {
+            winners[i] = players.get( winnersIndexes[i]);
+         }
+
+        return winners;
+
     }
     
     public String showScoreCard()
