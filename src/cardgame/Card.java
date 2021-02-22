@@ -2,69 +2,104 @@ package cardgame;
 
 /**
  * Card - a single playing card
- * @author
- * @version
+ * 
+ * @author Abdullah Riaz (22001296), Mohammed Sohail (22001513) and Mostafa
+ *         Khaled (22001062)
+ * @version 22/02/2021
  */
-public class Card
-{
-    // constants - to do in lectures
-    final String[] SUITS = { "Hearts", "Diamonds", "Spades", "Clubs"};
-    final String[] FACES = { "A", "2", "3", "4", "5",
-                             "6", "7", "8", "9", "10",
-                             "J", "Q", "K"};
-    
+
+public class Card {
+
+    // constants
+    final String[] SUITS = { "Hearts", "Diamonds", "Spades", "Clubs" };
+    final String[] FACES = { "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
+
     final int NOOFCARDSINSUIT = 13;
-    
-    // properties - to do in lectures
-    int  cardNo;
-    
-    // constructors  - to do in lectures
-    public Card( int faceValue, int suit )
-    {
+
+    // properties
+    int cardNo;
+
+    // constructors
+
+    /**
+     * Constructor using faceValue and suit index as input
+     */
+    public Card(int faceValue, int suit) {
         cardNo = faceValue + suit * NOOFCARDSINSUIT;
     }
-    
-    public Card( int cardNumber)
-    {
+
+    /**
+     * Constructor using cardNumber as input
+     */
+    public Card(int cardNumber) {
         cardNo = cardNumber;
     }
 
+    // methods
+    
+    /**
+     * Returns the card number
+     * 
+     * @return int
+     */
     public int getCardNo() {
         return this.cardNo;
     }
-    
-    public int getFaceValue()
-    {
+
+    /**
+     * Returns the face value of the card
+     * 
+     * @return int
+     */
+    public int getFaceValue() {
         return cardNo % NOOFCARDSINSUIT;
     }
-    
-    public int getSuit()
-    {
+
+    /**
+     * Returns the suit of the card
+     * 
+     * @return int
+     */
+    public int getSuit() {
         return cardNo / NOOFCARDSINSUIT;
     }
-    
-    public String toString()
-    {
-        return FACES[ getFaceValue() ] + " of " + SUITS[ getSuit() ];
+
+    /**
+     * Returns the string representation of the card
+     * 
+     * @return String
+     */
+    public String toString() {
+        return FACES[getFaceValue()] + " of " + SUITS[getSuit()];
     }
-    
-    public boolean equals( Card c)
-    {
-        if (this.getFaceValue() == c.getFaceValue() && this.getSuit() == c.getSuit() ) {
+
+    /**
+     * Determines if two cards are equal and returns the result
+     * 
+     * @param c
+     * @return boolean
+     */
+    public boolean equals(Card c) {
+
+        if (this.getFaceValue() == c.getFaceValue() && this.getSuit() == c.getSuit()) {
             return true;
         }
 
         else {
-
-        return false;
-        
+            return false;
         }
 
     }
-    
-    public int compareTo( Card c)
-    {
-        if (this.cardNo == c.cardNo ) {
+
+    /**
+     * Compares the current card with the input card
+     * 
+     * @param c
+     * @return int
+     */
+    public int compareTo(Card c) {
+
+        if (this.cardNo == c.cardNo) {
             return 0;
         }
 
@@ -72,7 +107,6 @@ public class Card
             return this.cardNo > c.cardNo ? 1 : -1;
         }
 
-}
-
+    }
 
 }
